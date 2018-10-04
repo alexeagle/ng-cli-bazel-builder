@@ -17,8 +17,8 @@ Angular CLI builders that delegate to Bazel under-the-hood.
         "build": {
           "builder": "bazel-cli-builders:build",
           "options": {
+            "bazelCommand": "build",
             "targetLabel": "//src:src"
           },
-          "configurations": {}
         },
 ```
