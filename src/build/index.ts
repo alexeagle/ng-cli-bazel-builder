@@ -24,7 +24,7 @@ export class BundleBuilder implements Builder<Schema> {
     console.info(chalk.yellow(targetLabel));
 
     // TODO: Support passing flags.
-    return runBazel(projectRoot, builderConfig.options.bazelCommand, targetLabel, [])
+    return runBazel(projectRoot, builderConfig.options.bazelCommand, builderConfig.options.watch, targetLabel, [])
       .pipe(
         map(() => ({success: true})),
         catchError(() => of({success: false})),

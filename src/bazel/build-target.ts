@@ -1,11 +1,11 @@
 import {spawn} from 'child_process';
 import {Observable, Subject} from 'rxjs';
 
-export function runBazel(projectDir: string, command: string, workspaceTarget: string, flags: string[])
+export function runBazel(projectDir: string, command: string, watch: boolean, workspaceTarget: string, flags: string[])
     : Observable<void> {
 
   const doneSubject = new Subject<void>();
-  const buildProcess = spawn('bazel', [command, workspaceTarget, ...flags], {
+  const buildProcess = spawn(watch ? 'ibazel' : 'bazel', [command, workspaceTarget, ...flags], {
     cwd: projectDir,
     stdio: 'inherit',
     shell: false,

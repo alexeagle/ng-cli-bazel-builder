@@ -1,6 +1,6 @@
 {
   "name": "bazel-cli-builders",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Angular CLI architect builders for Bazel",
   "main": "dist/index.js",
   "scripts": {
@@ -29,7 +29,7 @@
     "@types/chalk": "^2.2.0",
     "@types/node": "^10.11.4",
     "cpy-cli": "^2.0.0",
-    "rxjs": "~6.3.0",
+    "rxjs": "~6.2.0",
     "typescript": "^2.9.2"
   },
   "dependencies": {

@@ -19,7 +19,7 @@ var BundleBuilder = /** @class */ (function () {
         }
         console.info(chalk_1.default.yellow(targetLabel));
         // TODO: Support passing flags.
-        return build_target_1.runBazel(projectRoot, builderConfig.options.bazelCommand, targetLabel, [])
+        return build_target_1.runBazel(projectRoot, builderConfig.options.bazelCommand, builderConfig.options.watch, targetLabel, [])
             .pipe(operators_1.map(function () { return ({ success: true }); }), operators_1.catchError(function () { return rxjs_1.of({ success: false }); }), operators_1.tap(function () { return console.info(chalk_1.default.green('Successfully built:'), chalk_1.default.yellow(targetLabel)); }));
     };
     return BundleBuilder;
